@@ -7,7 +7,7 @@ inherit uboot-config deploy
 
 EXTRA_OEMAKE = 'CROSS_COMPILE=${TARGET_PREFIX} CC="${TARGET_PREFIX}gcc ${TOOLCHAIN_OPTIONS}" HOSTCC="${BUILD_CC} ${BUILD_CFLAGS} ${BUILD_LDFLAGS}"'
 
-DEPENDS += "dtc-native bc-native"
+DEPENDS += "dtc-native bc-native ${@bb.utils.contains('MACHINE_FEATURES', 'optee', 'optee-os', '', d)}"
 
 # Allow setting an additional version string that will be picked up by the
 # u-boot build system and appended to the u-boot version.  If the .scmversion
