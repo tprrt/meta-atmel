@@ -137,4 +137,4 @@ TOOLCHAIN_TARGET_TASK += " \
     lua-dev \
     lua-staticdev \
     "
-IMAGE_INSTALL:append:sama5d27-som1-ek-optee-sd = " optee-os optee-test optee-examples"
+IMAGE_INSTALL:append:sama5d27-som1-ek-optee-sd = " optee-test optee-examples"
