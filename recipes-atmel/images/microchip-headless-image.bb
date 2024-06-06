@@ -25,7 +25,10 @@ IMAGE_INSTALL:append:sama5d27-wlsom1-ek-sd = " ptc-examples nginx \
 				wilc-demo-fs-overlay \
 				wilc-ble-demo \
 				wilc-websocket-demo "
-
+IMAGE_INSTALL:append:sama5d27-wlsom1-ek-optee-sd = " ptc-examples nginx \
+				wilc-demo-fs-overlay \
+				wilc-ble-demo \
+				wilc-websocket-demo "
 IMAGE_INSTALL:append:sama7g5ek = " bonnie++ iozone3 gstreamer1.0 \
 				gstreamer1.0-plugins-base \
 				gstreamer1.0-plugins-bad \
@@ -35,6 +38,7 @@ IMAGE_INSTALL:append:sama7g5ek = " bonnie++ iozone3 gstreamer1.0 \
 				video-capture-at91"
 
 IMAGE_INSTALL:append:sama5d27-som1-ek-optee-sd = " optee-test optee-examples"
+IMAGE_INSTALL:append:sama5d27-wlsom1-ek-optee-sd = " optee-test optee-examples"
 
 # OSPI image must fit into 120 MBytes
 IMAGE_INSTALL:remove:sama7g5ek-ospi = " \
