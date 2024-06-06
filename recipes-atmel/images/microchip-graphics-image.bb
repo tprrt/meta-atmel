@@ -129,10 +129,13 @@ IMAGE_INSTALL:append:sama5d2-ptc-ek-sd = " ptc-examples"
 IMAGE_INSTALL:append:sama5d27-wlsom1-ek-sd = " ptc-examples \
                                                wilc-demo-fs-overlay \
                                                "
+IMAGE_INSTALL:append:sama5d27-wlsom1-ek-optee-sd = " ptc-examples \
+                                                     wilc-demo-fs-overlay \
+                                                   "
 
 IMAGE_INSTALL:append:sama5d2 = " video-capture-at91 \
-				libv4l v4l-utils media-ctl yavta \
-				"
+				 libv4l v4l-utils media-ctl yavta \
+			       "
 
 inherit core-image siteinfo
 
@@ -145,3 +148,4 @@ TOOLCHAIN_TARGET_TASK += " \
     libstdc++-dev \
     "
 IMAGE_INSTALL:append:sama5d27-som1-ek-optee-sd = " optee-test optee-examples"
+IMAGE_INSTALL:append:sama5d27-wlsom1-ek-optee-sd = " optee-test optee-examples"
