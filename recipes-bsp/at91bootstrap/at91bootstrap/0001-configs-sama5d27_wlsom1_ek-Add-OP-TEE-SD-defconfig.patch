@@ -1,0 +1,45 @@
+From aa22e1122d2c307342b056c0959aeb77461350ea Mon Sep 17 00:00:00 2001
+From: Thomas Perrot <thomas.perrot@bootlin.com>
+Date: Thu, 6 Jun 2024 11:26:18 +0200
+Subject: [PATCH] configs: sama5d27_wlsom1_ek: Add OP-TEE SD defconfig
+
+Add dedicated OP-TEE defconfig for sama5d27_wlsom1_ek. This defconfig
+was derived from "sama5d27_wlsom1_eksd_uboot_defconfig" with the single
+addition of "CONFIG_LOAD_OPTEE=y" and implicitly the removal of
+"# CONFIG_ENTER_NWD is not set".
+
+Upstream-Status: Submitted [https://github.com/linux4sam/at91bootstrap/pull/177]
+
+Signed-off-by: Thomas Perrot <thomas.perrot@bootlin.com>
+---
+ ...sama5d27_wlsom1_ek-opteesd_uboot_defconfig | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
+ create mode 100644 configs/sama5d27_wlsom1_ek-opteesd_uboot_defconfig
+
+diff --git a/configs/sama5d27_wlsom1_ek-opteesd_uboot_defconfig b/configs/sama5d27_wlsom1_ek-opteesd_uboot_defconfig
+new file mode 100644
+index 000000000000..2a999eab5f80
+--- /dev/null
++++ b/configs/sama5d27_wlsom1_ek-opteesd_uboot_defconfig
+@@ -0,0 +1,19 @@
++# Copyright (C) 2024 Microchip Technology Inc. and its subsidiaries
++#
++# SPDX-License-Identifier: MIT
++
++CONFIG_CRYSTAL_24_000MHZ=y
++CONFIG_CONSOLE_INDEX=0
++CONFIG_DEBUG=y
++CONFIG_DDR_SET_BY_DEVICE=y
++CONFIG_DDR_AD220032D=y
++CONFIG_SDCARD=y
++# CONFIG_SDHC_8BIT_SUPPORT is not set
++CONFIG_LOAD_OPTEE=y
++CONFIG_LED_ON_BOARD=y
++CONFIG_LED_R_ON_PIOA=y
++CONFIG_LED_R_PIN=6
++CONFIG_LED_G_ON_PIOA=y
++CONFIG_LED_G_PIN=7
++CONFIG_LED_B_ON_PIOA=y
++CONFIG_LED_B_PIN=8
+--
+2.45.1
