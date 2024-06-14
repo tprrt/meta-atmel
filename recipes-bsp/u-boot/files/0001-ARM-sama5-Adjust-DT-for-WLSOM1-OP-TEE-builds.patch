@@ -1,0 +1,30 @@
+From 428c6e0f92ea8f9455c394b36b59728bca4b87b8 Mon Sep 17 00:00:00 2001
+From: Thomas Perrot <thomas.perrot@bootlin.com>
+Date: Mon, 10 Jun 2024 14:58:59 +0200
+Subject: [PATCH 1/2] ARM: sama5: Adjust DT for WLSOM1 OP-TEE builds
+
+OP-TEE builds need to have their DT's re-adjusted so that the DT clocks
+reference the SCMI node.
+
+Signed-off-by: Thomas Perrot <thomas.perrot@bootlin.com>
+---
+ arch/arm/dts/at91-sama5d27_wlsom1_ek.dts | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/arch/arm/dts/at91-sama5d27_wlsom1_ek.dts b/arch/arm/dts/at91-sama5d27_wlsom1_ek.dts
+index 6d4b35ea9661..36c2eaac14d8 100644
+--- a/arch/arm/dts/at91-sama5d27_wlsom1_ek.dts
++++ b/arch/arm/dts/at91-sama5d27_wlsom1_ek.dts
+@@ -9,6 +9,9 @@
+ /dts-v1/;
+ #include <dt-bindings/gpio/gpio.h>
+ #include "sama5d27_wlsom1.dtsi"
++#ifdef CONFIG_CLK_SCMI
++#include "sama5d2-optee.dtsi"
++#endif
+ 
+ / {
+ 	model = "Microchip SAMA5D27 WLSOM1 EK";
+-- 
+2.45.1
+

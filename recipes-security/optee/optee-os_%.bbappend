@@ -10,7 +10,12 @@ SRC_URI:append = " file://0001-plat-sam-remove-NVMEM_HUK.patch"
 
 PV = "4.2.0+git${SRCPV}"
 
-COMPATIBLE_MACHINE = "(sama5d27-som1-ek-optee-sd)"
+COMPATIBLE_MACHINE = "(sama5d27-som1-ek-optee-sd|sama5d27-wlsom1-ek-optee-sd)"
+
+EXTRA_OEMAKE:append:sama5d27-som1-ek-optee-sd = " PLATFORM_FLAVOR=sama5d27_som1_ek"
+EXTRA_OEMAKE:append:sama5d27-wlsom1-ek-optee-sd = " PLATFORM_FLAVOR=sama5d27_wlsom1_ek"
+
+EXTRA_OEMAKE:append = " DEBUG=1 CFG_TEE_CORE_LOG_LEVEL=4 CFG_TEE_CORE_DEBUG=y CFG_WERROR=y"
 
 OPTEE_SUFFIX ?= "bin"
 OPTEE_IMAGE ?= "tee-${MACHINE}-${PV}-${PR}.${OPTEE_SUFFIX}"

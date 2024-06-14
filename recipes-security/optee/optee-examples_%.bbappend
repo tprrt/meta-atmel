@@ -6,4 +6,4 @@ SRCREV = "378dc0db2d5dd279f58a3b6cb3f78ffd6b165035"
 
 PV = "4.2.0+git${SRCPV}"
 
-COMPATIBLE_MACHINE = "(sama5d27-som1-ek-optee-sd)"
+COMPATIBLE_MACHINE = "(sama5d27-som1-ek-optee-sd|sama5d27-wlsom1-ek-optee-sd)"
